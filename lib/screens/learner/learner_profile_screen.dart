@@ -25,7 +25,7 @@ class _LearnerProfileScreenState extends State<LearnerProfileScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('My Subjects'),
+              Text('My Subjects',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
               Container(
                 padding: EdgeInsets.only(left: 8,right: 8,top: 2,bottom: 2),
                 height: 30,
@@ -73,8 +73,8 @@ class _LearnerProfileScreenState extends State<LearnerProfileScreen> {
             showInitialTextAbovePicture:
             true, // setting it true will show initials text above profile picture, default false
           ),
-          Text('Sibusiso Ndlovu'),
-          Text('0 TutorEggs'),
+          Text('Sibusiso Ndlovu',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
+          Text('0 TutorEggs',style: TextStyle(fontSize: 13)),
         ],
       ),
     );
