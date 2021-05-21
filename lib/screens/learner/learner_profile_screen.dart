@@ -19,31 +19,73 @@ class _LearnerProfileScreenState extends State<LearnerProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _buildProfileHeader(context),
+      body: Column(
+        children: [
+          _buildProfileHeader(context),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('My Subjects'),
+              Container(
+                padding: EdgeInsets.only(left: 8,right: 8,top: 2,bottom: 2),
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.pink[50],
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.add,color: Colors.pink,size: 20,),
+                    SizedBox(width: 2,),
+                    Text("Add New",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+                  ],
+                ),
+              )
+            ],
+          ),
+          _buildSubjectsTile(context)
+        ],
+      ),
     );
   }
 
   Widget _buildProfileHeader(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: CircularProfileAvatar(
-        'https://i.pravatar.cc/300', //sets image path, it should be a URL string. default value is empty string, if path is empty it will display only initials
-        radius: 100, // sets radius, default 50.0
-        backgroundColor:
-        Colors.transparent, // sets background color, default Colors.white
-        borderWidth: 10, // sets border, default 0.0
-        // sets initials text, set your own style, default Text('')
-        borderColor: Colors.brown, // sets border color, default Colors.white
-        elevation:
-        5.0, // sets elevation (shadow of the profile picture), default value is 0.0
-        foregroundColor: Colors.brown.withOpacity(
-            0.5), //sets foreground colour, it works if showInitialTextAbovePicture = true , default Colors.transparent
-        cacheImage: true, // allow widget to cache image against provided url
-        onTap: () {
+      child: Column(
+        children: [
+          CircularProfileAvatar(
+            'https://i.pravatar.cc/300', //sets image path, it should be a URL string. default value is empty string, if path is empty it will display only initials
+            radius: 50, // sets radius, default 50.0
+            backgroundColor:
+            Colors.transparent, // sets background color, default Colors.white
+            borderWidth: 10, // sets border, default 0.0
+            // sets initials text, set your own style, default Text('')
+            borderColor: Colors.brown, // sets border color, default Colors.white
+            elevation:
+            5.0, // sets elevation (shadow of the profile picture), default value is 0.0
+            foregroundColor: Colors.brown.withOpacity(
+                0.5), //sets foreground colour, it works if showInitialTextAbovePicture = true , default Colors.transparent
+            cacheImage: true, // allow widget to cache image against provided url
+            onTap: () {
 
-        }, // sets on tap
-        showInitialTextAbovePicture:
-        true, // setting it true will show initials text above profile picture, default false
+            }, // sets on tap
+            showInitialTextAbovePicture:
+            true, // setting it true will show initials text above profile picture, default false
+          ),
+          Text('Sibusiso Ndlovu'),
+          Text('0 TutorEggs'),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSubjectsTile(BuildContext context) {
+    return Card(
+      child: ListTile(
+        leading: Icon(Icons.plagiarism_outlined),
+        title: Text('Mathematics'),
+        trailing: Icon(Icons.delete_forever),
       ),
     );
   }
