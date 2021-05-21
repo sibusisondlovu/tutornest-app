@@ -1,5 +1,7 @@
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tutor_nest/services/login_service.dart';
 import 'package:tutor_nest/widgets/main_app_bar.dart';
 
 class LearnerProfileScreen extends StatefulWidget {
@@ -18,6 +20,7 @@ class _LearnerProfileScreenState extends State<LearnerProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Column(
         children: [
@@ -50,12 +53,18 @@ class _LearnerProfileScreenState extends State<LearnerProfileScreen> {
   }
 
   Widget _buildProfileHeader(BuildContext context) {
+
+    LoginService _loginService = Provider.of<LoginService>(
+        context,
+        listen: false
+    );
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           CircularProfileAvatar(
-            'https://i.pravatar.cc/300', //sets image path, it should be a URL string. default value is empty string, if path is empty it will display only initials
+            _loginService.loggedInUserModel.photoUrl, //sets image path, it should be a URL string. default value is empty string, if path is empty it will display only initials
             radius: 50, // sets radius, default 50.0
             backgroundColor:
             Colors.transparent, // sets background color, default Colors.white
@@ -73,7 +82,7 @@ class _LearnerProfileScreenState extends State<LearnerProfileScreen> {
             showInitialTextAbovePicture:
             true, // setting it true will show initials text above profile picture, default false
           ),
-          Text('Sibusiso Ndlovu',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
+          Text(_loginService.loggedInUserModel.displayName ,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
           Text('0 TutorEggs',style: TextStyle(fontSize: 13)),
         ],
       ),
