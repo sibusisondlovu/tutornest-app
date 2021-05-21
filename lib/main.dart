@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tutor_nest/screens/common/choose_role_screen.dart';
+import 'package:tutor_nest/services/login_service.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,13 +14,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tutor Nest',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          fontFamily: 'Poppins'
+    return Provider(
+      create: (_)=> LoginService(),
+      child: MaterialApp(
+        title: 'Tutor Nest',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            fontFamily: 'Poppins'
+        ),
+        home: ChooseRoleScreen(),
       ),
-      home: ChooseRoleScreen(),
     );
   }
 }

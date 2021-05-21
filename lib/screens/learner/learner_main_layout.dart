@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tutor_nest/screens/learner/learner_home_screen.dart';
+import 'package:tutor_nest/screens/learner/learner_profile_screen.dart';
 import 'package:tutor_nest/shared/constants.dart';
+import 'package:tutor_nest/widgets/main_app_bar.dart';
+import 'package:tutor_nest/widgets/user_profile_header_widget.dart';
 
 class LearnerHomeLayout extends StatefulWidget {
   @override
@@ -18,7 +21,7 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
     LearnerHomeScreen(), //home screen, default landing
     LearnerHomeScreen(),
     LearnerHomeScreen(),
-    LearnerHomeScreen()
+    LearnerProfileScreen()
   ];
 
   @override
@@ -33,19 +36,10 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
 //        ShowCaseWidget.of(context).startShowCase([_postItemKey]));
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Color(int.parse(Constants.primaryColor)),
-        title: Text(
-          'Tutor Nest'
-        ),
-        actions: [
-          Icon(Icons.notification_important)
-        ],
-      ),
+      appBar: MainAppBar(),
       bottomNavigationBar: BottomNavigationBar(
         key: _bottomNavigationKey,
-        backgroundColor: Color(int.parse(Constants.primaryColor)),
+        backgroundColor: Constants.primaryColor,
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.white,
