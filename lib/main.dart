@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tutor_nest/screens/common/choose_role_screen.dart';
 
@@ -6,11 +7,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TutorNest',
+      title: 'Tutor Nest',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          fontFamily: 'Poppins'
       ),
       home: ChooseRoleScreen(),
     );

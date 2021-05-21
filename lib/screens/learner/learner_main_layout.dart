@@ -37,7 +37,7 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
         automaticallyImplyLeading: false,
         backgroundColor: Color(int.parse(Constants.primaryColor)),
         title: Text(
-          'TutorNest'
+          'Tutor Nest'
         ),
         actions: [
           Icon(Icons.notification_important)
@@ -62,7 +62,10 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
           });
         },
       ),
-      body: tabs[_currentIndex],);
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: tabs[_currentIndex],
+      ),);
   }
 
 }
