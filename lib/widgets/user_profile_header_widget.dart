@@ -24,7 +24,7 @@ class UserProfileHeader extends StatelessWidget {
       margin: EdgeInsets.only(right: 10),
       padding: EdgeInsets.all(5),
       child: ClipOval(
-        child: Image.network(imagePath),
+        child: Image.network(imagePath, fit: BoxFit.cover,),
       ),
     ): SizedBox(height: 40,width: 40,);
   }

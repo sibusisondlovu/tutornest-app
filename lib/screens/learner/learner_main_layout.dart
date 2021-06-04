@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tutor_nest/screens/learner/learner_home_screen.dart';
 import 'package:tutor_nest/screens/learner/learner_profile_screen.dart';
+import 'package:tutor_nest/screens/learner/study_groups_screen.dart';
 import 'package:tutor_nest/shared/constants.dart';
 import 'package:tutor_nest/widgets/main_app_bar.dart';
 import 'package:tutor_nest/widgets/user_profile_header_widget.dart';
+
+import 'tutors_screen.dart';
 
 class LearnerHomeLayout extends StatefulWidget {
   @override
@@ -13,13 +16,12 @@ class LearnerHomeLayout extends StatefulWidget {
 class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
   GlobalKey _bottomNavigationKey = GlobalKey();
   GlobalKey _postItemKey = GlobalKey();
-  int _currentIndex = 1;
+  int _currentIndex = 0;
 
 
   final tabs = [
-    LearnerHomeScreen(),
-    LearnerHomeScreen(), //home screen, default landing
-    LearnerHomeScreen(),
+    TutorsScreen(),
+    StudyGroupsScreen(), //home screen, default landing
     LearnerHomeScreen(),
     LearnerProfileScreen()
   ];
@@ -44,9 +46,8 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.white,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.accessibility), label: 'Tutors'),
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Discussion'),
+          BottomNavigationBarItem(icon: Icon(Icons.accessibility), label: 'My Tutors'),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Groups'),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined), label: 'Library'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Me'),
         ],

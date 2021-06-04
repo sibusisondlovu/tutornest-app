@@ -26,18 +26,19 @@ class MainAppBarState extends State<MainAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading:UserProfileHeader(
+        showProfilePic: widget.showProfilePic,
+      ) ,
       title: Center(
         child: Image.asset('assets/images/icons/main_bar_logo.png',
-            height: 40
+            height: 35
         ),
       ),
       backgroundColor: Constants.primaryColor,
       elevation: 0.0,
       iconTheme: IconThemeData(color: Colors.white),
       actions: [
-        UserProfileHeader(
-          showProfilePic: widget.showProfilePic,
-        )
+        Icon(Icons.notification_important)
       ],
     );
   }
