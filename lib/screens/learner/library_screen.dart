@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class StudyGroupsScreen extends StatefulWidget {
-  const StudyGroupsScreen({Key key}) : super(key: key);
+class LibraryScreen extends StatefulWidget {
+  const LibraryScreen({Key key}) : super(key: key);
 
   @override
-  _StudyGroupsScreenState createState() => _StudyGroupsScreenState();
+  _LibraryScreenState createState() => _LibraryScreenState();
 }
 
-class _StudyGroupsScreenState extends State<StudyGroupsScreen> {
+class _LibraryScreenState extends State<LibraryScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _noGroups(context));
-
+    return Scaffold(
+      body: _noLibraryItems(context),
+    );
   }
 
-  Widget _noGroups(BuildContext context) {
+  Widget _noLibraryItems(BuildContext context) {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -30,14 +31,14 @@ class _StudyGroupsScreenState extends State<StudyGroupsScreen> {
               height: 10,
             ),
             Text(
-              'No Study Groups',
+              'No Libray Items',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 10,
             ),
             Text(
-              'You have not added any study groups. \nStudy groups will be shown here',
+              'You have not added any library items. \nLibrary items will be shown here',
               textAlign: TextAlign.center,
             ),
             SizedBox(
@@ -52,7 +53,7 @@ class _StudyGroupsScreenState extends State<StudyGroupsScreen> {
                     },
                   ),
                 ),
-                child: Text('Create Study Group')),
+                child: Text('Search Study Resources')),
             ElevatedButton(
                 onPressed: () async {},
                 style: ButtonStyle(
@@ -62,7 +63,7 @@ class _StudyGroupsScreenState extends State<StudyGroupsScreen> {
                     },
                   ),
                 ),
-                child: Text('Join Study Group')),
+                child: Text('Upload Study Resources')),
           ],
         ),
       ),

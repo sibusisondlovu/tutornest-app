@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutor_nest/screens/learner/learner_home_screen.dart';
 import 'package:tutor_nest/screens/learner/learner_profile_screen.dart';
+import 'package:tutor_nest/screens/learner/library_screen.dart';
 import 'package:tutor_nest/screens/learner/study_groups_screen.dart';
 import 'package:tutor_nest/shared/constants.dart';
 import 'package:tutor_nest/widgets/main_app_bar.dart';
@@ -22,7 +23,7 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
   final tabs = [
     TutorsScreen(),
     StudyGroupsScreen(), //home screen, default landing
-    LearnerHomeScreen(),
+    LibraryScreen(),
     LearnerProfileScreen()
   ];
 
@@ -42,7 +43,7 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
       bottomNavigationBar: BottomNavigationBar(
         key: _bottomNavigationKey,
         backgroundColor: Constants.primaryColor,
-        currentIndex: 0,
+        currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.white,
         items: [
