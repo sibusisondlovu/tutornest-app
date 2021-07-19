@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
 
 class LearnerHomeScreen extends StatefulWidget {
   @override
@@ -9,15 +8,6 @@ class LearnerHomeScreen extends StatefulWidget {
 
 class _LearnerHomeScreenState extends State<LearnerHomeScreen> {
 
-
-  void generateVideoThumbnails() async {
-    final uint8list = await VideoThumbnail.thumbnailData(
-      video: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-      imageFormat: ImageFormat.JPEG,
-      maxWidth: 128, // specify the width of the thumbnail, let the height auto-scaled to keep the source aspect ratio
-      quality: 25,
-    );
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
