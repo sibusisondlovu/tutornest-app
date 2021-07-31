@@ -75,17 +75,23 @@ class _LearnerPostQuestionScreenState extends State<LearnerPostQuestionScreen> {
                 },),
               SizedBox(height: 30,),
               Text('Type your learning area'),
-              TextField(
-                decoration: InputDecoration(labelText: 'e.g Trigonometry'),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: TextField(
+                  decoration: InputDecoration(labelText: 'e.g Trigonometry'),
+                ),
               ),
               SizedBox(height: 30,),
               Text('Type your question or send a screenshot'),
-              TextField(
-                decoration: InputDecoration(labelText: 'Type your question here or take a screenshot',
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.camera_alt),
-                  ),),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: TextField(
+                  decoration: InputDecoration(labelText: 'Type your question here or take a screenshot',
+                    suffixIcon: IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.camera_alt),
+                    ),),
+                ),
               ),
               SizedBox(height: 20,),
               ElevatedButton(

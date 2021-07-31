@@ -47,7 +47,7 @@ class _LearnerHomeLayoutState extends State<LearnerHomeLayout> {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.white,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.accessibility), label: 'My Tutors'),
+          BottomNavigationBarItem(icon: Icon(Icons.accessibility), label: 'Questions'),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Groups'),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined), label: 'Library'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Me'),

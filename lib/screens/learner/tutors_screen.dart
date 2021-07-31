@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutor_nest/screens/learner/learner_post_question_screen.dart';
 
 class TutorsScreen extends StatefulWidget {
   const TutorsScreen({Key key}) : super(key: key);
@@ -39,14 +40,19 @@ class _TutorsScreenState extends State<TutorsScreen> {
               height: 10,
             ),
             Text(
-              'You have not added any tutors. \nTutors will be shown here',
+              'You have not asked any question. \nYour asked questions will be shown here',
               textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 10,
             ),
             ElevatedButton(
-                onPressed: () async {},
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LearnerPostQuestionScreen()),
+                  );
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
@@ -54,7 +60,7 @@ class _TutorsScreenState extends State<TutorsScreen> {
                     },
                   ),
                 ),
-                child: Text('Find Tutor')),
+                child: Text('Ask Tutor a question;')),
           ],
         ),
       ),
